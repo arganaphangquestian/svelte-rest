@@ -19,6 +19,10 @@
       return x;
     });
   };
+
+  const todoDelete = (data) => {
+    todos = todos.filter((x) => x.id != data.id);
+  };
 </script>
 
 <style>
@@ -44,8 +48,10 @@
 
   <ul>
     {#each todos as x}
-      <li on:click={toggleIsDone(x)} class={x.isDone ? 'done' : ''}>
+      <li class={x.isDone ? 'done' : ''}>
+        <input type="checkbox" checked={x.isDone} on:change={toggleIsDone(x)} />
         {x.title} - {x.id}
+        <button on:click={todoDelete(x)}>X</button>
       </li>
     {/each}
   </ul>
