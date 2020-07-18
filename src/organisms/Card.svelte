@@ -1,6 +1,10 @@
 <script>
   import Button from "../components/Button.svelte";
   export let data = {};
+
+  const onFavouriteClick = (x) => {
+    alert(x.name);
+  };
 </script>
 
 <style>
@@ -66,7 +70,7 @@
 </style>
 
 <!-- Markup -->
-<div class="card">
+<div class="card" on:click={onFavouriteClick(data)}>
   <div class="card-top">
     <img
       src={data.sprites.front_default ?? data.sprites.front_shiny}

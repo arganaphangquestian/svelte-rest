@@ -5,5 +5,5 @@
 - [x] Binding
 - [x] Event
 - [x] Styling
-- [ ] Rest API
-- [ ] Store (State Management)
+- [x] Rest API
+- [x] Store (State Management)
