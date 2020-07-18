@@ -1,7 +1,7 @@
 ### Roadmap
 
 - [x] Basic Component
-- [ ] Props
+- [x] Props
 - [x] Binding
 - [x] Event
 - [x] Styling

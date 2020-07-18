@@ -1,4 +1,6 @@
 <script>
+  import Todo from "./components/Todo.svelte";
+
   let todos = [];
   let todo = "";
   const addTodo = () => {
@@ -33,10 +35,6 @@
     justify-content: center;
     align-items: center;
   }
-  li.done {
-    color: red;
-    text-decoration: line-through;
-  }
 </style>
 
 <!-- Markup -->
@@ -48,11 +46,7 @@
 
   <ul>
     {#each todos as x}
-      <li class={x.isDone ? 'done' : ''}>
-        <input type="checkbox" checked={x.isDone} on:change={toggleIsDone(x)} />
-        {x.title} - {x.id}
-        <button on:click={todoDelete(x)}>X</button>
-      </li>
+      <Todo dataTodo={x} onToggle={toggleIsDone} onDelete={todoDelete} />
     {/each}
   </ul>
 </div>
